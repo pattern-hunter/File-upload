@@ -4,8 +4,8 @@ def upload (request):
     return render (request, "upload.html")
     
 def uploaded (request):
-    file = request.FILES['img']
-    dest = open ("/foo/bar/image_name.jpeg", "w")
+    file = request.FILES['filename']
+    dest = open ("/foo/bar/file_name.jpeg", "w") # The path is the one where you want the file to be stored on the server.
     for bit in file.read ():
         dest.write (bit)
     return HttpResponse ("Uploaded")
